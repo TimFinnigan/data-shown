@@ -1,1 +1,9 @@
-<p>charts works!</p>
+<nav id="chart-nav">
+  <a routerLink="world-population" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+    >World Population</a
+  >
+  <!-- <a routerLink="/heroes" routerLinkActive="active">Heroes</a> -->
+</nav>
+<div id="chart-wrapper">
+  <router-outlet></router-outlet>
+</div>
