@@ -1,8 +1,9 @@
 #chart-nav {
     border-right: 1px solid lightgrey;
+    margin-right: 20px;
     padding-left: 20px;
     display: inline-block;
-    width: 200px;
+    width: 175px;
     height: 800px;
 }
 
