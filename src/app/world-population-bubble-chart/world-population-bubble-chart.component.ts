@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js'
 @Component({
   selector: 'app-world-population-bubble-chart',
@@ -9,7 +9,7 @@ export class WorldPopulationBubbleChartComponent implements OnInit {
   title = 'angular8chartjs';
   canvas: any;
   ctx: any;
-  ngAfterViewInit() {
+  ngOnInit() {
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
     let myChart = new Chart(this.ctx, {
