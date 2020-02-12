@@ -5,8 +5,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { WorldPopulationBubbleChartComponent } from './world-population-bubble-chart/world-population-bubble-chart.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'charts', component: ChartsComponent, children: [
       { path: 'world-population', component: WorldPopulationBubbleChartComponent },
