@@ -6,3 +6,9 @@
 a {
   color: steelblue;
 }
+
+.source {
+  color: darkgrey;
+  float: right;
+  font-size: 14px;
+}
