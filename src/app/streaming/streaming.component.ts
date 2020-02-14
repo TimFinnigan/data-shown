@@ -9,7 +9,6 @@ export class StreamingComponent implements OnInit {
 
   constructor() { }
 
-  title = 'angular8chartjs';
   canvas: any;
   ctx: any;
   ngOnInit() {
@@ -18,7 +17,7 @@ export class StreamingComponent implements OnInit {
     let myChart = new Chart(this.ctx, {
       type: 'bar',
       data: {
-        labels: ["Netflix", "Amazon", "Hulu", "HBO", "Showtime"],
+        labels: ["Netflix", "Amazon Prime", "Hulu", "HBO Now", "Showtime"],
         datasets: [{
           label: 'Subscribers',
           data: [150000000, 100000000, 28000000, 8000000, 3000000],
@@ -35,10 +34,32 @@ export class StreamingComponent implements OnInit {
       options: {
         responsive: false,
         display: true,
+        title: {
+          display: true,
+          text: 'Popular Streaming Subscribers (2019)'
+        },
+        legend: {
+          display: false
+        },
+        tooltips: {
+          callbacks: {
+            label: function (tooltipItem, data) {
+              return tooltipItem.yLabel / 1000000 + ' Million';
+            }
+          }
+        },
         scales: {
           yAxes: [{
             ticks: {
-              beginAtZero: true
+              beginAtZero: true,
+              callback: function (label, index, labels) {
+                return label / 1000000 + ' M';
+              }
+            },
+
+            scaleLabel: {
+              display: true,
+              labelString: 'Subscribers in Millions'
             }
           }]
         }
