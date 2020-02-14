@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   {
     path: 'charts', component: ChartsComponent, children: [
+      { path:'', redirectTo: 'streaming', pathMatch: 'full' },
       { path: 'streaming', component: StreamingComponent },
       // { path: 'pie-chart', component: AnotherChildComponent }
     ]
