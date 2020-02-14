@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ChartsComponent } from './charts/charts.component';
 import { WorldPopulationBubbleChartComponent } from './world-population-bubble-chart/world-population-bubble-chart.component';
 import { HomeComponent } from './home/home.component';
+import { StreamingComponent } from './streaming/streaming.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChartsComponent,
     WorldPopulationBubbleChartComponent,
-    HomeComponent
+    HomeComponent,
+    StreamingComponent
   ],
   imports: [
     BrowserModule,
