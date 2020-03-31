@@ -47,6 +47,9 @@ export class Covid19Component implements OnInit {
         legend: {
           display: true
         },
+        tooltips: {
+          mode: 'index'
+        },
 
         scales: {
           yAxes: [{
