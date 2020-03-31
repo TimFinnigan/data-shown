@@ -14,7 +14,7 @@ export class Covid19Component implements OnInit {
   ngOnInit() {
     this.canvas = document.getElementById('cases-by-country');
     this.ctx = this.canvas.getContext('2d');
-    let myChart = new Chart(this.ctx, {
+    let confirmedCasesChart = new Chart(this.ctx, {
       type: 'line',
       data: {
         labels: ["1/22/20", "1/23/20", "1/24/20", "1/25/20", "1/26/20", "1/27/20", "1/28/20", "1/29/20", "1/30/20", "1/31/20", "2/1/20", "2/2/20", "2/3/20", "2/4/20", "2/5/20", "2/6/20", "2/7/20", "2/8/20", "2/9/20", "2/10/20", "2/11/20", "2/12/20", "2/13/20", "2/14/20", "2/15/20", "2/16/20", "2/17/20", "2/18/20", "2/19/20", "2/20/20", "2/21/20", "2/22/20", "2/23/20", "2/24/20", "2/25/20", "2/26/20", "2/27/20", "2/28/20", "2/29/20", "3/1/20", "3/2/20", "3/3/20", "3/4/20", "3/5/20", "3/6/20", "3/7/20", "3/8/20", "3/9/20", "3/10/20", "3/11/20", "3/12/20", "3/13/20", "3/14/20", "3/15/20", "3/16/20", "3/17/20", "3/18/20", "3/19/20", "3/20/20", "3/21/20", "3/22/20", "3/23/20", "3/24/20", "3/25/20", "3/26/20", "3/27/20", "3/28/20", "3/29/20", "3/30/20"],
@@ -54,6 +54,85 @@ export class Covid19Component implements OnInit {
           {
             label: 'Germany',
             data:[0,0,0,0,0,1,4,4,4,5,8,10,12,12,12,12,13,13,14,14,16,16,16,16,16,16,16,16,16,16,16,16,16,16,17,27,46,48,79,130,159,196,262,482,670,799,1040,1176,1457,1908,2078,3675,4585,5795,7272,9257,12327,15320,19848,22213,24873,29056,32986,37323,43938,50871,57695,62095,66885],
+            backgroundColor: "darkorange",
+            borderColor: "darkorange",
+            borderWidth: 1,
+            fill: false
+          }
+
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        display: true,
+        title: {
+          display: false,
+          text: 'Confirmed Covid-19 cases'
+        },
+        legend: {
+          display: true
+        },
+        tooltips: {
+          mode: 'index'
+        },
+
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: 'Confirmed Cases'
+            }
+          }]
+        }
+      }
+    });
+
+    this.canvas = document.getElementById('deaths-by-country');
+    this.ctx = this.canvas.getContext('2d');
+    let deathsChart = new Chart(this.ctx, {
+      type: 'line',
+      data: {
+        labels: ["1/22/20", "1/23/20", "1/24/20", "1/25/20", "1/26/20", "1/27/20", "1/28/20", "1/29/20", "1/30/20", "1/31/20", "2/1/20", "2/2/20", "2/3/20", "2/4/20", "2/5/20", "2/6/20", "2/7/20", "2/8/20", "2/9/20", "2/10/20", "2/11/20", "2/12/20", "2/13/20", "2/14/20", "2/15/20", "2/16/20", "2/17/20", "2/18/20", "2/19/20", "2/20/20", "2/21/20", "2/22/20", "2/23/20", "2/24/20", "2/25/20", "2/26/20", "2/27/20", "2/28/20", "2/29/20", "3/1/20", "3/2/20", "3/3/20", "3/4/20", "3/5/20", "3/6/20", "3/7/20", "3/8/20", "3/9/20", "3/10/20", "3/11/20", "3/12/20", "3/13/20", "3/14/20", "3/15/20", "3/16/20", "3/17/20", "3/18/20", "3/19/20", "3/20/20", "3/21/20", "3/22/20", "3/23/20", "3/24/20", "3/25/20", "3/26/20", "3/27/20", "3/28/20", "3/29/20", "3/30/20"],
+        datasets: [
+          {
+            label: 'United States',
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,6,7,11,12,14,17,21,22,28,36,40,47,54,63,85,108,118,200,244,307,417,557,706,942,1209,1581,2026,2467,2978],
+            backgroundColor: "steelblue",
+            borderColor: "steelblue",
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'Italy',
+            data: [],
+            backgroundColor: "red",
+            borderColor: "red",
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'Spain',
+            data: [],
+            backgroundColor: "green",
+            borderColor: "green",
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'China',
+            data: [],
+            backgroundColor: "darkred",
+            borderColor: "darkred",
+            borderWidth: 1,
+            fill: false
+          },
+          {
+            label: 'Germany',
+            data: [],
             backgroundColor: "darkorange",
             borderColor: "darkorange",
             borderWidth: 1,
