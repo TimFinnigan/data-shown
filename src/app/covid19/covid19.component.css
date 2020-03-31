@@ -1,3 +1,8 @@
 .sub-heading {
   margin-bottom: 15px;
 }
+
+#cases-by-country {
+    width: 600;
+    height: 400px;
+}
