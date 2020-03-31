@@ -7,6 +7,7 @@ import { ChartsComponent } from './charts/charts.component';
 import { WorldPopulationBubbleChartComponent } from './world-population-bubble-chart/world-population-bubble-chart.component';
 import { HomeComponent } from './home/home.component';
 import { StreamingComponent } from './streaming/streaming.component';
+import { Covid19Component } from './covid19/covid19.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { StreamingComponent } from './streaming/streaming.component';
     ChartsComponent,
     WorldPopulationBubbleChartComponent,
     HomeComponent,
-    StreamingComponent
+    StreamingComponent,
+    Covid19Component
   ],
   imports: [
     BrowserModule,
