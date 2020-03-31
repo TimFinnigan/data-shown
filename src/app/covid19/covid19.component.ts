@@ -26,7 +26,7 @@ export class Covid19Component implements OnInit {
         }]
       },
       options: {
-        responsive: false,
+        responsive: true,
         display: true,
         title: {
           display: false,
@@ -35,22 +35,12 @@ export class Covid19Component implements OnInit {
         legend: {
           display: true
         },
-        tooltips: {
-          callbacks: {
-            // label: function (tooltipItem, data) {
-            //   return tooltipItem.yLabel / 1000000 + ' Million';
-            // }
-          }
-        },
+
         scales: {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              // callback: function (label, index, labels) {
-              //   return label / 1000000 + ' M';
-              // }
             },
-
             scaleLabel: {
               display: true,
               labelString: 'Confirmed Cases'
