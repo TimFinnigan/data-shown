@@ -318,7 +318,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-faded\">\n  <a class=\"navbar-brand\" [routerLink]=\"['']\" >Data Shown</a>\n  <div id=\"navbarNav\">\n    <ul class=\"nav navbar-nav\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['']\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\"\n          >Home</a\n        >\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['charts']\" routerLinkActive=\"active\" \n          >Charts</a\n        >\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg navbar-light bg-faded\">\n  <a class=\"navbar-brand\" [routerLink]=\"['']\" >DataShown</a>\n  <div id=\"navbarNav\">\n    <ul class=\"nav navbar-nav\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['']\" routerLinkActive=\"active\" [routerLinkActiveOptions]=\"{ exact: true }\"\n          >Home</a\n        >\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" [routerLink]=\"['charts']\" routerLinkActive=\"active\" \n          >Charts</a\n        >\n      </li>\n    </ul>\n  </div>\n</nav>\n\n<router-outlet></router-outlet>\n");
 
 /***/ }),
 
@@ -335,6 +335,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/covid19/covid19.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/covid19/covid19.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h5>Confirmed Covid-19 Cases by Country</h5>\n<div class=\"sub-heading\">\n    Countries with the highest confirmed cases as of March 31st, 2020\n</div>\n<div class=\"chart-container\">\n    <canvas id=\"cases-by-country\"></canvas>\n</div>\n<span class=\"source\">Source: Johns Hopkins</span>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html":
 /*!********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html ***!
@@ -344,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"home-wrapper\">\n  <h5>Welcome to Data Shown!</h5>\n  <br>\n  <p>\n    This is a passion project created by\n    <a href=\"http://timfinnigan.com\">Tim Finnigan</a>.\n  </p>\n  <p>My goal is to create compelling visual essays.</p>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"home-wrapper\">\n  <h5>Welcome to DataShown.</h5>\n  <br>\n  <p>\n    This project was created by\n    <a href=\"http://timfinnigan.com\" target=\"_blank\">Tim Finnigan</a>.\n  </p>\n  <p>My goal is to create clear and compelling visual essays.</p>\n  <p>This site was just recently created, so there is much more content to come.</p>\n  <p>Please contact me if you have any feedback, questions, or suggestions.</p>\n</div>\n");
 
 /***/ }),
 
@@ -619,6 +632,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _charts_charts_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./charts/charts.component */ "./src/app/charts/charts.component.ts");
 /* harmony import */ var _streaming_streaming_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./streaming/streaming.component */ "./src/app/streaming/streaming.component.ts");
+/* harmony import */ var _covid19_covid19_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./covid19/covid19.component */ "./src/app/covid19/covid19.component.ts");
+
 
 
 
@@ -629,8 +644,9 @@ const routes = [
     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_3__["HomeComponent"] },
     {
         path: 'charts', component: _charts_charts_component__WEBPACK_IMPORTED_MODULE_4__["ChartsComponent"], children: [
-            { path: '', redirectTo: 'streaming', pathMatch: 'full' },
+            { path: '', redirectTo: 'covid19', pathMatch: 'full' },
             { path: 'streaming', component: _streaming_streaming_component__WEBPACK_IMPORTED_MODULE_5__["StreamingComponent"] },
+            { path: 'covid19', component: _covid19_covid19_component__WEBPACK_IMPORTED_MODULE_6__["Covid19Component"] },
         ]
     },
 ];
@@ -710,6 +726,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _world_population_bubble_chart_world_population_bubble_chart_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./world-population-bubble-chart/world-population-bubble-chart.component */ "./src/app/world-population-bubble-chart/world-population-bubble-chart.component.ts");
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _streaming_streaming_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./streaming/streaming.component */ "./src/app/streaming/streaming.component.ts");
+/* harmony import */ var _covid19_covid19_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./covid19/covid19.component */ "./src/app/covid19/covid19.component.ts");
+
 
 
 
@@ -728,7 +746,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _charts_charts_component__WEBPACK_IMPORTED_MODULE_5__["ChartsComponent"],
             _world_population_bubble_chart_world_population_bubble_chart_component__WEBPACK_IMPORTED_MODULE_6__["WorldPopulationBubbleChartComponent"],
             _home_home_component__WEBPACK_IMPORTED_MODULE_7__["HomeComponent"],
-            _streaming_streaming_component__WEBPACK_IMPORTED_MODULE_8__["StreamingComponent"]
+            _streaming_streaming_component__WEBPACK_IMPORTED_MODULE_8__["StreamingComponent"],
+            _covid19_covid19_component__WEBPACK_IMPORTED_MODULE_9__["Covid19Component"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -752,7 +771,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("#chart-nav {\n    border-right: 1px solid lightgrey;\n    margin-right: 20px;\n    margin-top: -15px;\n    padding-left: 20px;\n    padding-top: 15px;\n    display: inline-block;\n    width: 175px;\n    height: 800px;\n    vertical-align: top;\n}\n\n#chart-nav nav {\n    padding-top: 20px;\n}\n\n#chart-wrapper {\n    display: inline-block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcnRzL2NoYXJ0cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUNBQWlDO0lBQ2pDLGtCQUFrQjtJQUNsQixpQkFBaUI7SUFDakIsa0JBQWtCO0lBQ2xCLGlCQUFpQjtJQUNqQixxQkFBcUI7SUFDckIsWUFBWTtJQUNaLGFBQWE7SUFDYixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxpQkFBaUI7QUFDckI7O0FBRUE7SUFDSSxxQkFBcUI7QUFDekIiLCJmaWxlIjoic3JjL2FwcC9jaGFydHMvY2hhcnRzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcnQtbmF2IHtcbiAgICBib3JkZXItcmlnaHQ6IDFweCBzb2xpZCBsaWdodGdyZXk7XG4gICAgbWFyZ2luLXJpZ2h0OiAyMHB4O1xuICAgIG1hcmdpbi10b3A6IC0xNXB4O1xuICAgIHBhZGRpbmctbGVmdDogMjBweDtcbiAgICBwYWRkaW5nLXRvcDogMTVweDtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gICAgd2lkdGg6IDE3NXB4O1xuICAgIGhlaWdodDogODAwcHg7XG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcbn1cblxuI2NoYXJ0LW5hdiBuYXYge1xuICAgIHBhZGRpbmctdG9wOiAyMHB4O1xufVxuXG4jY2hhcnQtd3JhcHBlciB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xufSJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("#chart-nav {\n  border-right: 1px solid lightgrey;\n  margin-right: 20px;\n  margin-top: -15px;\n  padding-left: 20px;\n  padding-top: 15px;\n  display: inline-block;\n  width: 175px;\n  height: 800px;\n  vertical-align: top;\n  /* ! hide for now */\n  display: none;\n}\n\n#chart-nav nav {\n  padding-top: 20px;\n}\n\n#chart-wrapper {\n  display: inline-block;\n  margin-left: 50px;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY2hhcnRzL2NoYXJ0cy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUNBQWlDO0VBQ2pDLGtCQUFrQjtFQUNsQixpQkFBaUI7RUFDakIsa0JBQWtCO0VBQ2xCLGlCQUFpQjtFQUNqQixxQkFBcUI7RUFDckIsWUFBWTtFQUNaLGFBQWE7RUFDYixtQkFBbUI7RUFDbkIsbUJBQW1CO0VBQ25CLGFBQWE7QUFDZjs7QUFFQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLHFCQUFxQjtFQUNyQixpQkFBaUI7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9jaGFydHMvY2hhcnRzLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIjY2hhcnQtbmF2IHtcbiAgYm9yZGVyLXJpZ2h0OiAxcHggc29saWQgbGlnaHRncmV5O1xuICBtYXJnaW4tcmlnaHQ6IDIwcHg7XG4gIG1hcmdpbi10b3A6IC0xNXB4O1xuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gIHBhZGRpbmctdG9wOiAxNXB4O1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIHdpZHRoOiAxNzVweDtcbiAgaGVpZ2h0OiA4MDBweDtcbiAgdmVydGljYWwtYWxpZ246IHRvcDtcbiAgLyogISBoaWRlIGZvciBub3cgKi9cbiAgZGlzcGxheTogbm9uZTtcbn1cblxuI2NoYXJ0LW5hdiBuYXYge1xuICBwYWRkaW5nLXRvcDogMjBweDtcbn1cblxuI2NoYXJ0LXdyYXBwZXIge1xuICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIG1hcmdpbi1sZWZ0OiA1MHB4O1xufVxuIl19 */");
 
 /***/ }),
 
@@ -782,6 +801,129 @@ ChartsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./charts.component.css */ "./src/app/charts/charts.component.css")).default]
     })
 ], ChartsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/covid19/covid19.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/covid19/covid19.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".sub-heading {\n  margin-bottom: 15px;\n}\n\n.chart-container {\n  position: relative;\n  height: 60vh;\n  width: 80vw;\n}\n\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY292aWQxOS9jb3ZpZDE5LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxtQkFBbUI7QUFDckI7O0FBRUE7RUFDRSxrQkFBa0I7RUFDbEIsWUFBWTtFQUNaLFdBQVc7QUFDYiIsImZpbGUiOiJzcmMvYXBwL2NvdmlkMTkvY292aWQxOS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN1Yi1oZWFkaW5nIHtcbiAgbWFyZ2luLWJvdHRvbTogMTVweDtcbn1cblxuLmNoYXJ0LWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgaGVpZ2h0OiA2MHZoO1xuICB3aWR0aDogODB2dztcbn1cblxuIl19 */");
+
+/***/ }),
+
+/***/ "./src/app/covid19/covid19.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/covid19/covid19.component.ts ***!
+  \**********************************************/
+/*! exports provided: Covid19Component */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Covid19Component", function() { return Covid19Component; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
+/* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+let Covid19Component = class Covid19Component {
+    constructor() { }
+    ngOnInit() {
+        this.canvas = document.getElementById('cases-by-country');
+        this.ctx = this.canvas.getContext('2d');
+        let myChart = new chart_js__WEBPACK_IMPORTED_MODULE_2__(this.ctx, {
+            type: 'line',
+            data: {
+                labels: ["1/22/20", "1/23/20", "1/24/20", "1/25/20", "1/26/20", "1/27/20", "1/28/20", "1/29/20", "1/30/20", "1/31/20", "2/1/20", "2/2/20", "2/3/20", "2/4/20", "2/5/20", "2/6/20", "2/7/20", "2/8/20", "2/9/20", "2/10/20", "2/11/20", "2/12/20", "2/13/20", "2/14/20", "2/15/20", "2/16/20", "2/17/20", "2/18/20", "2/19/20", "2/20/20", "2/21/20", "2/22/20", "2/23/20", "2/24/20", "2/25/20", "2/26/20", "2/27/20", "2/28/20", "2/29/20", "3/1/20", "3/2/20", "3/3/20", "3/4/20", "3/5/20", "3/6/20", "3/7/20", "3/8/20", "3/9/20", "3/10/20", "3/11/20", "3/12/20", "3/13/20", "3/14/20", "3/15/20", "3/16/20", "3/17/20", "3/18/20", "3/19/20", "3/20/20", "3/21/20", "3/22/20", "3/23/20", "3/24/20", "3/25/20", "3/26/20", "3/27/20", "3/28/20", "3/29/20", "3/30/20"],
+                datasets: [
+                    {
+                        label: 'United States',
+                        data: [1, 1, 2, 2, 5, 5, 5, 5, 5, 7, 8, 8, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 15, 15, 15, 51, 51, 57, 58, 60, 68, 74, 98, 118, 149, 217, 262, 402, 518, 583, 959, 1281, 1663, 2179, 2727, 3499, 4632, 6421, 7783, 13677, 19100, 25489, 33276, 43847, 53740, 65778, 83836, 101657, 121478, 140886, 161807],
+                        backgroundColor: "steelblue",
+                        borderColor: "steelblue",
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'Italy',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 20, 62, 155, 229, 322, 453, 655, 888, 1128, 1694, 2036, 2502, 3089, 3858, 4636, 5883, 7375, 9172, 10149, 12462, 12462, 17660, 21157, 24747, 27980, 31506, 35713, 41035, 47021, 53578, 59138, 63927, 69176, 74386, 80589, 86498, 92472, 97689, 101739],
+                        backgroundColor: "red",
+                        borderColor: "red",
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'Spain',
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 13, 15, 32, 45, 84, 120, 165, 222, 259, 400, 500, 673, 1073, 1695, 2277, 2277, 5232, 6391, 7798, 9942, 11748, 13910, 17963, 20410, 25374, 28768, 35136, 39885, 49515, 57786, 65719, 73235, 80110, 87956],
+                        backgroundColor: "green",
+                        borderColor: "green",
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'China',
+                        data: [1083, 3367, 3684.4197, 548, 643, 920, 1406, 2075, 2877, 5509, 6087, 8141, 9802, 11891, 16630, 19716, 23707, 27440, 30587, 34110, 36814, 39829, 42354, 44386, 44759, 59895, 66358, 68413, 70513, 72434, 74211, 74619, 75077, 75550, 77001, 77022, 77241, 77754, 78166, 78600, 78928, 79356, 79932, 80136, 80261, 80386, 80537, 80690, 80770, 80823, 80860, 80887, 80921, 80932, 80945, 80977, 81003, 81033, 81058, 81102, 81156, 81250, 81305, 81435, 81498, 81591, 81661, 81782, 81897, 81999, 82122, 82198],
+                        backgroundColor: "darkred",
+                        borderColor: "darkred",
+                        borderWidth: 1,
+                        fill: false
+                    },
+                    {
+                        label: 'Germany',
+                        data: [0, 0, 0, 0, 0, 1, 4, 4, 4, 5, 8, 10, 12, 12, 12, 12, 13, 13, 14, 14, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 16, 17, 27, 46, 48, 79, 130, 159, 196, 262, 482, 670, 799, 1040, 1176, 1457, 1908, 2078, 3675, 4585, 5795, 7272, 9257, 12327, 15320, 19848, 22213, 24873, 29056, 32986, 37323, 43938, 50871, 57695, 62095, 66885],
+                        backgroundColor: "darkorange",
+                        borderColor: "darkorange",
+                        borderWidth: 1,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                display: true,
+                title: {
+                    display: false,
+                    text: 'Confirmed Covid-19 cases'
+                },
+                legend: {
+                    display: true
+                },
+                tooltips: {
+                    mode: 'index'
+                },
+                scales: {
+                    yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Confirmed Cases'
+                            }
+                        }]
+                }
+            }
+        });
+    }
+};
+Covid19Component = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: '',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./covid19.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/covid19/covid19.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./covid19.component.css */ "./src/app/covid19/covid19.component.css")).default]
+    })
+], Covid19Component);
 
 
 
