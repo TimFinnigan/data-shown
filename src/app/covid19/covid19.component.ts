@@ -64,6 +64,7 @@ export class Covid19Component implements OnInit {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         display: true,
         title: {
           display: false,
