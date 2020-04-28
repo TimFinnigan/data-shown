@@ -10,7 +10,7 @@ export class PopulationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    let continentPopData = [1340598000, 4641055000, 747636000, 368870000, 42678000, 653962000];
+    let continentPopData = [4641055000, 1340598000, 747636000, 653962000, 368870000, 42678000];
 
     for (let i = 0; i < continentPopData.length; i++) {
       let billions = Math.abs(continentPopData[i] / 1.0e+9);
@@ -20,7 +20,7 @@ export class PopulationComponent implements OnInit {
     new Chart(document.getElementById("cases-by-country"), {
       type: 'horizontalBar',
       data: {
-        labels: ["Africa", "Asia", "Europe", "North America", "Oceania", "Latin America"],
+        labels: ["Asia", "Africa", "Europe", "Latin America", "North America", "Oceania"],
         datasets: [
           {
             label: "Population (billions)",
@@ -44,17 +44,22 @@ export class PopulationComponent implements OnInit {
           mode: 'index'
         },
         scales: {
-          xAxes: [{
-            ticks: {
-              beginAtZero: true,
-              // maxTicksLimit: 20
-            },
-            scaleLabel: {
-              display: true,
-              labelString: 'Billions',
-            }
-          }]
-        }
+          xAxes: [
+            {
+              gridLines: {
+                display: false
+              },
+              ticks: {
+                beginAtZero: true,
+                // maxTicksLimit: 20
+              },
+              scaleLabel: {
+                display: true,
+                labelString: 'Billions',
+              }
+            }]
+        },
+
       }
     });
   }
