@@ -9,18 +9,23 @@ export class PopulationComponent implements OnInit {
 
   constructor() { }
 
-  canvas: any;
-  ctx: any;
   ngOnInit() {
+    let continentPopData = [1340598000, 4641055000, 747636000, 368870000, 42678000, 653962000];
+
+    for (let i = 0; i < continentPopData.length; i++) {
+      let billions = Math.abs(continentPopData[i] / 1.0e+9);
+      continentPopData[i] = Number(billions.toFixed(2));
+    }
+
     new Chart(document.getElementById("cases-by-country"), {
       type: 'horizontalBar',
       data: {
-        labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+        labels: ["Africa", "Asia", "Europe", "North America", "Oceania", "Latin America"],
         datasets: [
           {
-            label: "Population (millions)",
-            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-            data: [2478, 5267, 734, 784, 433]
+            label: "Population (billions)",
+            backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
+            data: continentPopData
           }
         ]
       },
@@ -39,13 +44,14 @@ export class PopulationComponent implements OnInit {
           mode: 'index'
         },
         scales: {
-          yAxes: [{
+          xAxes: [{
             ticks: {
               beginAtZero: true,
+              // maxTicksLimit: 20
             },
             scaleLabel: {
-              display: false,
-              labelString: 'Countries'
+              display: true,
+              labelString: 'Billions',
             }
           }]
         }
