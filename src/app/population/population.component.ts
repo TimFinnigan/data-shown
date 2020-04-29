@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js'
 declare const getPopData: any;
+declare const getTop10: any;
 @Component({
   selector: '',
   templateUrl: './population.component.html',
@@ -11,8 +12,7 @@ export class PopulationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-   
-    let obj = getPopData();
-    new Chart(document.getElementById("cases-by-country"), obj);
+    new Chart(document.getElementById("cases-by-country"), getPopData());
+    new Chart(document.getElementById("top-ten-asia"), getTop10("asia"));
   }
 }
