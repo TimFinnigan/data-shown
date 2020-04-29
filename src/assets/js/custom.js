@@ -46,6 +46,7 @@ function getPopData() {
         display: false,
       },
       tooltips: {
+        enabled: false,
         mode: "index",
       },
       scales: {
@@ -157,6 +158,7 @@ function getTop10(continent) {
         display: false,
       },
       tooltips: {
+        enabled: false,
         mode: "index",
       },
       scales: {
@@ -194,10 +196,8 @@ function getTop10(continent) {
           this.data.datasets.forEach(function (dataset, i) {
             var meta = chartInstance.controller.getDatasetMeta(i);
             meta.data.forEach(function (bar, index) {
-              console.log(ctx);
               var data = dataset.data[index] + " M";
               let country = bar._view.label;
-              console.log(country);
               if (country === "China" || country === "India") {
                 ctx.fillStyle = "white";
                 ctx.fillText(data, bar._model.x - 35, bar._model.y + 5);
