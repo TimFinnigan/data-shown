@@ -23,13 +23,16 @@ export class PopulationComponent implements OnInit {
         labels: ["Asia", "Africa", "Europe", "Latin America", "North America", "Oceania"],
         datasets: [
           {
+            backgroundColor: "steelblue",
             label: "Population (billions)",
-            backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
+            // backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
             data: continentPopData
           }
         ]
       },
       options: {
+      fillColor: "rgba(0,60,100,1)",
+
         responsive: true,
         maintainAspectRatio: false,
         display: true,
