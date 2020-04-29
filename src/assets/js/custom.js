@@ -96,7 +96,6 @@ function getPopData() {
 }
 
 function getTop10(continent) {
-
   let countries = [];
 
   if (continent === "asia") {
@@ -111,9 +110,8 @@ function getTop10(continent) {
       "Vietnam",
       "Iran",
       "Turkey",
-    ]
+    ];
   }
- 
 
   let continentPopData = [
     1392730000,
@@ -125,7 +123,7 @@ function getTop10(continent) {
     106651920,
     95540400,
     81800270,
-    82319720
+    82319720,
   ];
 
   for (let i = 0; i < continentPopData.length; i++) {
@@ -196,8 +194,17 @@ function getTop10(continent) {
           this.data.datasets.forEach(function (dataset, i) {
             var meta = chartInstance.controller.getDatasetMeta(i);
             meta.data.forEach(function (bar, index) {
+              console.log(ctx);
               var data = dataset.data[index] + " M";
-              ctx.fillText(data, bar._model.x + 30, bar._model.y + 5);
+              let country = bar._view.label;
+              console.log(country);
+              if (country === "China" || country === "India") {
+                ctx.fillStyle = "white";
+                ctx.fillText(data, bar._model.x - 35, bar._model.y + 5);
+              } else {
+                ctx.fillStyle = "black";
+                ctx.fillText(data, bar._model.x + 30, bar._model.y + 5);
+              }
             });
           });
         },
