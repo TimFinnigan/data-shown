@@ -65,6 +65,13 @@ function getPopData() {
             },
           },
         ],
+        yAxes: [
+          {
+            ticks: {
+              fontSize: 18,
+            },
+          },
+        ],
       },
       hover: {
         animationDuration: 0,
@@ -209,7 +216,6 @@ function getTop10(continent) {
               });
             });
           }
-        
         },
       },
     },
