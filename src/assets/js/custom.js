@@ -193,20 +193,23 @@ function getTop10(continent) {
           );
           ctx.textAlign = "center";
           ctx.textBaseline = "bottom";
-          this.data.datasets.forEach(function (dataset, i) {
-            var meta = chartInstance.controller.getDatasetMeta(i);
-            meta.data.forEach(function (bar, index) {
-              var data = dataset.data[index] + " M";
-              let country = bar._view.label;
-              if (country === "China" || country === "India") {
-                ctx.fillStyle = "white";
-                ctx.fillText(data, bar._model.x - 35, bar._model.y + 5);
-              } else {
-                ctx.fillStyle = "black";
-                ctx.fillText(data, bar._model.x + 30, bar._model.y + 5);
-              }
+          if (this.chart.width > 500) {
+            this.data.datasets.forEach(function (dataset, i) {
+              var meta = chartInstance.controller.getDatasetMeta(i);
+              meta.data.forEach(function (bar, index) {
+                var data = dataset.data[index] + " M";
+                let country = bar._view.label;
+                if (country === "China" || country === "India") {
+                  ctx.fillStyle = "white";
+                  ctx.fillText(data, bar._model.x - 35, bar._model.y + 5);
+                } else {
+                  ctx.fillStyle = "black";
+                  ctx.fillText(data, bar._model.x + 30, bar._model.y + 5);
+                }
+              });
             });
-          });
+          }
+        
         },
       },
     },
