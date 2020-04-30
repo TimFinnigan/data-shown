@@ -8,7 +8,8 @@ import { Covid19Component } from './covid19/covid19.component';
 import { PopulationComponent } from './population/population.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'charts', pathMatch: 'full'},
+  { path: 'home', component: HomeComponent },
   {
     path: 'charts', component: ChartsComponent, children: [
       { path: '', redirectTo: 'population', pathMatch: 'full' },
