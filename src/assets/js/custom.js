@@ -28,7 +28,14 @@ function getPopData() {
         {
           // backgroundColor: "steelblue",
           label: "Population (billions)",
-          backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
+          backgroundColor: [
+            "#264653",
+            "#2A9D8F",
+            "#E9C46A",
+            "#e6beae",
+            "#E76F51",
+            "#eae2b7",
+          ],
           data: continentPopData,
         },
       ],
@@ -133,7 +140,14 @@ function getPopDataPie() {
         {
           // backgroundColor: "steelblue",
           label: "Population (billions)",
-          backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
+          backgroundColor: [
+            "#264653",
+            "#2A9D8F",
+            "#E9C46A",
+            "#e6beae",
+            "#E76F51",
+            "#eae2b7",
+          ],
           data: continentPopData,
         },
       ],
@@ -153,7 +167,7 @@ function getPopDataPie() {
         enabled: false,
         mode: "index",
       },
- 
+
       hover: {
         animationDuration: 0,
       },
@@ -166,33 +180,62 @@ function getPopDataPie() {
 function getTop10(continent) {
   let countries = [];
 
+  let continentPopData = [];
+
+  if (continent === "all") {
+    countries = [
+      "China",
+      "India",
+      "United States",
+      "Indonesia",
+      "Pakistan",
+      "Brazil",
+      "Nigeria",
+      "Bangladesh",
+      "Russia",
+      "Japan",
+    ];
+
+    continentPopData = [
+      1392730000,
+      1352617330,
+      327167000,
+      267663430,
+      212215030,
+      209469000,
+      195875000,
+      161356040,
+      144478000,
+      126529100,
+    ];
+  }
   if (continent === "asia") {
     countries = [
       "China",
       "India",
+      "United States",
       "Indonesia",
       "Pakistan",
+      "Brazil",
+      "Nigeria",
       "Bangladesh",
+      "Russia",
       "Japan",
-      "The Philippines",
-      "Vietnam",
-      "Iran",
-      "Turkey",
+    ];
+
+    continentPopData = [
+      1392730000,
+      1352617330,
+      267663430,
+      212215030,
+      161356040,
+      126529100,
+      106651920,
+      95540400,
+      81800270,
+      82319720,
     ];
   }
-
-  let continentPopData = [
-    1392730000,
-    1352617330,
-    267663430,
-    212215030,
-    161356040,
-    126529100,
-    106651920,
-    95540400,
-    81800270,
-    82319720,
-  ];
 
   for (let i = 0; i < continentPopData.length; i++) {
     let millions = Math.abs(continentPopData[i] / 1.0e6);

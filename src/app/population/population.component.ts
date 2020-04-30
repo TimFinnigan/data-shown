@@ -15,6 +15,7 @@ export class PopulationComponent implements OnInit {
   ngOnInit() {
     new Chart(document.getElementById("cases-by-country"), getPopData());
     // new Chart(document.getElementById("cases-by-country-pie"), getPopDataPie());
-    new Chart(document.getElementById("top-ten-asia"), getTop10("asia"));
+    new Chart(document.getElementById("top-ten-world"), getTop10("all"));
+    // new Chart(document.getElementById("top-ten-asia"), getTop10("asia"));
   }
 }
