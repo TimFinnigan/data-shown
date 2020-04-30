@@ -1,5 +1,8 @@
 <nav id="chart-nav">
-  <a routerLink="streaming" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+  <a [routerLink]="['population']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+    >Population</a
+  >
+  <a [routerLink]="['streaming']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
     >Streaming</a
   >
   <!-- <a routerLink="/heroes" routerLinkActive="active">Heroes</a> -->

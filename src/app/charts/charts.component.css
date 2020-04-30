@@ -1,3 +1,7 @@
+.active {
+  text-decoration: underline;
+}
+
 #chart-nav {
   border-right: 1px solid lightgrey;
   margin-right: 20px;
@@ -8,8 +12,12 @@
   width: 175px;
   height: 800px;
   vertical-align: top;
-  /* ! hide for now */
-  display: none;
+  /* TODO - make horizontal add certain width... */
+}
+
+#chart-nav a {
+  display: block;
+  margin-top: 15px;
 }
 
 #chart-nav nav {
