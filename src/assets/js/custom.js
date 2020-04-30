@@ -179,8 +179,8 @@ function getPopDataPie() {
 
 function getTop10(continent) {
   let countries = [];
-
   let continentPopData = [];
+  let colors = "steelblue";
 
   if (continent === "all") {
     countries = [
@@ -207,6 +207,19 @@ function getTop10(continent) {
       161356040,
       144478000,
       126529100,
+    ];
+
+    colors = [
+      "#264653",
+      "#264653",
+      "#E76F51",
+      "#264653",
+      "#264653",
+      "#e6beae",
+      "#2A9D8F",
+      "#264653",
+      "#E9C46A",
+      "#264653",
     ];
   }
   if (continent === "asia") {
@@ -248,9 +261,8 @@ function getTop10(continent) {
       labels: countries,
       datasets: [
         {
-          backgroundColor: "steelblue",
           label: "Population (billions)",
-          // backgroundColor: ["#264653", "#2A9D8F", "#E9C46A", "#e6beae", "#E76F51", "#eae2b7"],
+          backgroundColor: colors,
           data: continentPopData,
         },
       ],
