@@ -340,7 +340,19 @@ function getTop10(continent) {
 }
 
 function loadYoutubeChart(youtubeData) {
-  console.log(youtubeData.default);
+  let data = youtubeData.default;
+  let categories = {};
+
+  for (let vid in data) {
+    if (data[vid].category in categories) {
+      categories[data[vid].category]++;
+    } else {
+      categories[data[vid].category] = 1;
+    }
+    // console.log(data[vid]);
+  }
+
+  console.log(categories);
 
   let continentPopData = [
     4641055000,
