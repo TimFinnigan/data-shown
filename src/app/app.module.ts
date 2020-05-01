@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { StreamingComponent } from './streaming/streaming.component';
 import { Covid19Component } from './covid19/covid19.component';
 import { PopulationComponent } from './population/population.component';
+import { YoutubeComponent } from './youtube/youtube.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PopulationComponent } from './population/population.component';
     HomeComponent,
     StreamingComponent,
     Covid19Component,
-    PopulationComponent
+    PopulationComponent,
+    YoutubeComponent
   ],
   imports: [
     BrowserModule,

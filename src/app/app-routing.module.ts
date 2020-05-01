@@ -6,9 +6,11 @@ import { WorldPopulationBubbleChartComponent } from './world-population-bubble-c
 import { StreamingComponent } from './streaming/streaming.component';
 import { Covid19Component } from './covid19/covid19.component';
 import { PopulationComponent } from './population/population.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+
 
 const routes: Routes = [
-  { path: '', redirectTo: 'charts', pathMatch: 'full'},
+  { path: '', redirectTo: 'charts', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   {
     path: 'charts', component: ChartsComponent, children: [
@@ -16,6 +18,7 @@ const routes: Routes = [
       { path: 'streaming', component: StreamingComponent },
       { path: 'covid19', component: Covid19Component },
       { path: 'population', component: PopulationComponent },
+      { path: 'youtube', component: YoutubeComponent },
     ]
   },
 ];
