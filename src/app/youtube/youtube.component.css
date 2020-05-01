@@ -1,0 +1,10 @@
+.sub-heading {
+  margin-bottom: 15px;
+}
+
+.chart-container {
+  position: relative;
+  height: 50vh;
+  width: 70vw;
+  margin-top: 10px;
+}
