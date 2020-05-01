@@ -340,6 +340,8 @@ function getTop10(continent) {
 }
 
 function loadYoutubeChart(youtubeData) {
+  // TODO - get catregory data so you can map to it!
+
   let data = youtubeData.default;
   let categories = {};
 
