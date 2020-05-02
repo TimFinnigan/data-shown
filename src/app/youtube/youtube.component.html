@@ -1,3 +1,8 @@
+<ul>
+  <li *ngFor="let vid of videoData | keyvalue">
+    {{ vid.key }}: {{ vid.value.channel }}
+  </li>
+</ul>
 <h5>Top 50 Trending Videos by Category</h5>
 <div class="sub-heading">
   Looking at YouTube data from May 1st, 2020 (
