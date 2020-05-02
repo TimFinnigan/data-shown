@@ -339,22 +339,30 @@ function getTop10(continent) {
   return obj;
 }
 
-function loadYoutubeChart(youtubeData) {
-  // TODO - get catregory data so you can map to it!
+function loadYoutubeChart(youtubeData, youtubeCategories) {
+  youtubeData = youtubeData.default;
+  youtubeCategories = youtubeCategories.default.items;
 
-  let data = youtubeData.default;
-  let categories = {};
+  let categoryMap = {};
 
-  for (let vid in data) {
-    if (data[vid].category in categories) {
-      categories[data[vid].category]++;
-    } else {
-      categories[data[vid].category] = 1;
-    }
-    // console.log(data[vid]);
+  for (let i = 0; i < youtubeCategories.length; i++) {
+    categoryMap[youtubeCategories[i]["id"]] =
+      youtubeCategories[i]["snippet"]["title"];
   }
 
-  console.log(categories);
+  let categoryCounts = {};
+
+  for (let vid in youtubeData) {
+    let categoryId = youtubeData[vid].category.toString();
+    let categoryName = categoryMap[categoryId];
+    if (categoryName in categoryCounts) {
+      categoryCounts[categoryName]++;
+    } else {
+      categoryCounts[categoryName] = 1;
+    }
+  }
+
+  console.log(categoryCounts);
 
   let continentPopData = [
     4641055000,
