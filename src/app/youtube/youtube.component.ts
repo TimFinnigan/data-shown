@@ -10,8 +10,11 @@ declare const loadYoutubeChart: any;
   styleUrls: ['./youtube.component.css']
 })
 export class YoutubeComponent implements OnInit {
-  videoData: any = youtubeData["default"];
-  constructor() { console.log(this.videoData) }
+  videoData: any = Object.values(youtubeData["default"]);
+
+  constructor() {
+    console.log(this.videoData);
+  }
 
   ngOnInit() {
     new Chart(document.getElementById("cases-by-country"), loadYoutubeChart(youtubeData, youtubeCategories));

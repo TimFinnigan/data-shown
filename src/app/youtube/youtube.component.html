@@ -1,7 +1,5 @@
 <ul>
-  <li *ngFor="let vid of videoData | keyvalue">
-    {{ vid.key }}: {{ vid.value.channel }}
-  </li>
+  <li *ngFor="let item of videoData">{{ item.channel }}</li>
 </ul>
 <h5>Top 50 Trending Videos by Category</h5>
 <div class="sub-heading">
