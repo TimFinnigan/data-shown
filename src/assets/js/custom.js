@@ -362,10 +362,23 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
     }
   }
 
+  // Sort values in descending order
+  let chartLabels = [];
+  let chartData = [];
+  let entries = Object.entries(categoryCounts);
+  var sortedArray = entries.sort(function (a, b) {
+    return b[1] - a[1];
+  });
+
+  for (let i = 0; i < sortedArray.length; i++) {
+    chartLabels.push(sortedArray[i][0]);
+    chartData.push(sortedArray[i][1]);
+  }
+
   let obj = {
     type: "horizontalBar",
     data: {
-      labels: Object.keys(categoryCounts),
+      labels: chartLabels,
       datasets: [
         {
           backgroundColor: [
@@ -375,12 +388,12 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
             "#e6beae",
             "#E76F51",
             "#86BBD8",
-            "#eaf2b7",
+            "#5B6C5D",
             "#9EE493",
-            "#F19953",
+            "#DBB68F",
             "#218380",
           ],
-          data: Object.values(categoryCounts),
+          data: chartData,
         },
       ],
     },
@@ -410,7 +423,7 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
             },
             scaleLabel: {
               display: true,
-              labelString: "Views",
+              labelString: "Videos",
             },
           },
         ],
