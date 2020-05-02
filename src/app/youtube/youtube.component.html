@@ -3,15 +3,19 @@
   Looking at YouTube data from May 1st, 2020 (
   <a href="http://youtube.com/trending" target="_blank"
     >http://youtube.com/trending</a
-  >)
+  >
+  )
 </div>
-<ul class="video-list">
-  <li *ngFor="let item of videoData">{{ item.channel }}</li>
-</ul>
+<ol class="video-list">
+  <li *ngFor="let item of videoData">
+    <span class="channel-name">{{ item.channel }}</span
+    >: {{ item.title }}
+  </li>
+</ol>
 <hr />
 <h5>Top 50 Trending Videos by Category</h5>
 <div class="sub-heading">
-  Music is by far the most popular category
+  Music videos are often found on the trending page
 </div>
 <div class="chart-container">
   <canvas id="cases-by-country"></canvas>

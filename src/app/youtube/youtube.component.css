@@ -14,6 +14,10 @@
   overflow-y: scroll;
 }
 
+.video-list li:not(:first-child) {
+  margin-top: 5px;
+}
+
 /* Show scrollbar by default */
 ::-webkit-scrollbar {
   -webkit-appearance: none;
@@ -28,4 +32,8 @@
 
 hr {
   width: 100%;
+}
+
+.channel-name {
+  font-weight: bold;
 }
