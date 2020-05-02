@@ -430,7 +430,7 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
         yAxes: [
           {
             ticks: {
-              fontSize: 18,
+              fontSize: 14,
             },
           },
         ],
