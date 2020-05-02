@@ -362,57 +362,34 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
     }
   }
 
-  console.log(categoryCounts);
-
-  let continentPopData = [
-    4641055000,
-    1340598000,
-    747636000,
-    653962000,
-    368870000,
-    42678000,
-  ];
-
-  for (let i = 0; i < continentPopData.length; i++) {
-    let billions = Math.abs(continentPopData[i] / 1.0e9);
-    continentPopData[i] = Number(billions.toFixed(2));
-  }
-
   let obj = {
-    type: "doughnut",
+    type: "horizontalBar",
     data: {
-      labels: [
-        "Asia",
-        "Africa",
-        "Europe",
-        "Latin America",
-        "North America",
-        "Oceania",
-      ],
+      labels: Object.keys(categoryCounts),
       datasets: [
         {
-          // backgroundColor: "steelblue",
-          label: "Population (billions)",
           backgroundColor: [
             "#264653",
             "#2A9D8F",
             "#E9C46A",
             "#e6beae",
             "#E76F51",
-            "#eae2b7",
+            "#86BBD8",
+            "#eaf2b7",
+            "#9EE493",
+            "#F19953",
+            "#218380",
           ],
-          data: continentPopData,
+          data: Object.values(categoryCounts),
         },
       ],
     },
     options: {
-      fillColor: "rgba(0,60,100,1)",
       responsive: true,
       maintainAspectRatio: false,
       display: true,
       title: {
         display: false,
-        text: "Population",
       },
       legend: {
         display: false,
@@ -433,7 +410,7 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
             },
             scaleLabel: {
               display: true,
-              labelString: "Billions",
+              labelString: "Views",
             },
           },
         ],
@@ -463,8 +440,15 @@ function loadYoutubeChart(youtubeData, youtubeCategories) {
           this.data.datasets.forEach(function (dataset, i) {
             var meta = chartInstance.controller.getDatasetMeta(i);
             meta.data.forEach(function (bar, index) {
-              var data = dataset.data[index] + " B";
-              ctx.fillText(data, bar._model.x + 20, bar._model.y + 5);
+              var data = dataset.data[index];
+              let name = bar._view.label;
+              if (name === "Music") {
+                ctx.fillStyle = "white";
+                ctx.fillText(data, bar._model.x - 15, bar._model.y + 6);
+              } else {
+                ctx.fillStyle = "black";
+                ctx.fillText(data, bar._model.x + 7, bar._model.y + 6);
+              }
             });
           });
         },
