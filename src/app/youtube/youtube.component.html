@@ -1,12 +1,17 @@
-<ul>
-  <li *ngFor="let item of videoData">{{ item.channel }}</li>
-</ul>
-<h5>Top 50 Trending Videos by Category</h5>
+<h5>Top 50 Trending Videos in the United States</h5>
 <div class="sub-heading">
   Looking at YouTube data from May 1st, 2020 (
   <a href="http://youtube.com/trending" target="_blank"
     >http://youtube.com/trending</a
   >)
+</div>
+<ul class="video-list">
+  <li *ngFor="let item of videoData">{{ item.channel }}</li>
+</ul>
+<hr />
+<h5>Top 50 Trending Videos by Category</h5>
+<div class="sub-heading">
+  Music is by far the most popular category
 </div>
 <div class="chart-container">
   <canvas id="cases-by-country"></canvas>
