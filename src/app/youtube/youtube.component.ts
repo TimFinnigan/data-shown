@@ -17,6 +17,23 @@ export class YoutubeComponent implements OnInit {
   }
 
   ngOnInit() {
+    // Durations format example: "PT2M31S"
+    let videos = this.videoData;
+    for (let i = 0; i < videos.length; i++) {
+      let duration = videos[i].duration;
+
+      console.log(duration);
+
+      duration = duration.split("M");
+
+      console.log(duration);
+
+      let minutes = duration[0].replace(/\D/g, "");
+      let seconds = duration[1].replace(/\D/g, "");
+      console.log(minutes);
+      console.log(seconds);
+    }
+    console.group(this.videoData);
     new Chart(document.getElementById("cases-by-country"), loadYoutubeChart(youtubeData, youtubeCategories));
   }
 
