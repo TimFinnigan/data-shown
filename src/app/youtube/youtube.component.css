@@ -11,6 +11,7 @@
 
 .video-list {
   height: 250px;
+  width: 70vw;
   overflow-y: scroll;
 }
 
