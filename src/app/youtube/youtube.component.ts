@@ -64,9 +64,20 @@ export class YoutubeComponent implements OnInit {
     return averages;
   };
 
+  getAverageTitleLength: any = function () {
+    let videos = this.videoData;
+    let total = 0;
+    for (let i = 0; i < videos.length; i++) {
+      total += videos[i].title.length;
+    }
+    total /= 50;
+    return total;
+  };
+
   averageMinutes: any = this.getAverageMinutes();
   averageViews: any = this.getAverageViews();
   averageLikes: any = this.getAverageLikes();
+  averageTitleLength: any = this.getAverageTitleLength();
 
   constructor() {
   }

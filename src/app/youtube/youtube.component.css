@@ -38,3 +38,7 @@ hr {
 .channel-name {
   font-weight: bold;
 }
+
+#stats li {
+  margin-top: 10px;
+}
