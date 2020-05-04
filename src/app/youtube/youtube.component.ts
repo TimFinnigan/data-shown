@@ -43,8 +43,30 @@ export class YoutubeComponent implements OnInit {
     return total.toLocaleString();
   };
 
+  getAverageLikes: any = function () {
+    let videos = this.videoData;
+    let averages = {
+      likes: 0,
+      dislikes: 0
+    }
+    let likeTotal = 0;
+    let dislikeTotal = 0;
+    for (let i = 0; i < videos.length; i++) {
+      let likes = parseInt(videos[i].statistics.likeCount);
+      let dislikes = parseInt(videos[i].statistics.dislikeCount);
+      likeTotal += likes;
+      dislikeTotal += dislikes;
+    }
+    likeTotal /= 50;
+    dislikeTotal /= 50;
+    averages.likes = Math.round(likeTotal);
+    averages.dislikes = Math.round(dislikeTotal);
+    return averages;
+  };
+
   averageMinutes: any = this.getAverageMinutes();
   averageViews: any = this.getAverageViews();
+  averageLikes: any = this.getAverageLikes();
 
   constructor() {
   }
