@@ -12,13 +12,10 @@ declare const loadYoutubeChart: any;
 export class YoutubeComponent implements OnInit {
   videoData: any = Object.values(youtubeData["default"]);
 
-  constructor() {
-  }
-
-  ngOnInit() {
+  getAverageMinutes: any = function () {
     // Durations format example in JSON: "PT2M31S"
     let videos = this.videoData;
-    let totalTimeInMinutes = 0;
+    let total = 0;
     for (let i = 0; i < videos.length; i++) {
       let duration = videos[i].duration;
       duration = duration.split("M");
@@ -28,10 +25,18 @@ export class YoutubeComponent implements OnInit {
       if (seconds) {
         timeInMinutes += (parseInt(seconds) / 60);
       }
-      totalTimeInMinutes += timeInMinutes;
+      total += timeInMinutes;
     }
-    let averageMinutes = totalTimeInMinutes / 50;
-    console.log(averageMinutes.toFixed(2));
+    total /= 50;
+    return total.toFixed(2);
+  };
+
+  averageMinutes: any = this.getAverageMinutes();
+
+  constructor() {
+  }
+
+  ngOnInit() {
     console.group(this.videoData);
     new Chart(document.getElementById("cases-by-country"), loadYoutubeChart(youtubeData, youtubeCategories));
   }
