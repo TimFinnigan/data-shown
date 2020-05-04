@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js'
-import *  as  youtubeData from '../json/youtube-may-4.json';
+import *  as  youtubeData from '../json/youtube.json';
 import *  as  youtubeCategories from '../json/categories.json';
 declare const loadYoutubeChart: any;
 
