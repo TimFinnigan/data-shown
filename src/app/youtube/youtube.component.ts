@@ -43,11 +43,24 @@ export class YoutubeComponent implements OnInit {
     return total.toLocaleString();
   };
 
+  getAverageComments: any = function () {
+    let videos = this.videoData;
+    let total = 0;
+    for (let i = 0; i < videos.length; i++) {
+      let comments = parseInt(videos[i].statistics.commentCount);
+      total += comments;
+    }
+    total /= 50;
+    total = Math.round(total);
+    return total.toLocaleString();
+  };
+
+
   getAverageLikes: any = function () {
     let videos = this.videoData;
     let averages = {
-      likes: 0,
-      dislikes: 0
+      likes: "",
+      dislikes: ""
     }
     let likeTotal = 0;
     let dislikeTotal = 0;
@@ -59,8 +72,9 @@ export class YoutubeComponent implements OnInit {
     }
     likeTotal /= 50;
     dislikeTotal /= 50;
-    averages.likes = Math.round(likeTotal);
-    averages.dislikes = Math.round(dislikeTotal);
+
+    averages.likes = Math.round(likeTotal).toLocaleString();
+    averages.dislikes = Math.round(dislikeTotal).toLocaleString();
     return averages;
   };
 
@@ -76,6 +90,7 @@ export class YoutubeComponent implements OnInit {
 
   averageMinutes: any = this.getAverageMinutes();
   averageViews: any = this.getAverageViews();
+  averageComments: any = this.getAverageComments();
   averageLikes: any = this.getAverageLikes();
   averageTitleLength: any = this.getAverageTitleLength();
 
