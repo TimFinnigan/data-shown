@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js'
-import *  as  youtubeData from '../json/youtube.json';
+import *  as  youtubeData from '../json/youtube-may-4.json';
 import *  as  youtubeCategories from '../json/categories.json';
 declare const loadYoutubeChart: any;
 
@@ -46,11 +46,15 @@ export class YoutubeComponent implements OnInit {
   getAverageComments: any = function () {
     let videos = this.videoData;
     let total = 0;
+    let count = 0;
     for (let i = 0; i < videos.length; i++) {
+      // If comments are disabled then skip
+      if (!videos[i].statistics.commentCount) continue;
+      count++;
       let comments = parseInt(videos[i].statistics.commentCount);
       total += comments;
     }
-    total /= 50;
+    total /= count;
     total = Math.round(total);
     return total.toLocaleString();
   };
