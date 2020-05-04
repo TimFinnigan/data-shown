@@ -1,10 +1,9 @@
 <h5>Top 50 Trending Videos in the United States</h5>
 <div class="sub-heading">
-  Looking at YouTube data from May 1st, 2020 (
+  Looking at YouTube data from May 1st, 2020 -
   <a href="http://youtube.com/trending" target="_blank"
     >http://youtube.com/trending</a
   >
-  )
 </div>
 <ol class="video-list">
   <li *ngFor="let item of videoData">
@@ -17,24 +16,24 @@
 <div class="sub-heading">
   <ul id="stats">
     <li>
-      The average duration is <b>{{ averageMinutes }} minutes</b>
+      The average duration (in minutes): <b>{{ averageMinutes }}</b>
     </li>
     <li>
-      The average number of views is: <b>{{ averageViews }} views</b>
+      The average number of views: <b>{{ averageViews }}</b>
     </li>
     <li>
-      The average number of comments is: <b>{{ averageComments }} comments</b>
+      The average number of comments: <b>{{ averageComments }}</b>
     </li>
     <li>
-      The average number of likes is: <b>{{ averageLikes.likes }} likes</b>
+      The average number of likes: <b>{{ averageLikes.likes }}</b>
     </li>
     <li>
-      The average number of dislikes is:
-      <b>{{ averageLikes.dislikes }} dislikes</b>
+      The average number of dislikes:
+      <b>{{ averageLikes.dislikes }}</b>
     </li>
     <li>
-      The average number of characters in the title is:
-      <b>{{ averageTitleLength }} characters</b>
+      The average number of characters in the title:
+      <b>{{ averageTitleLength }}</b>
     </li>
   </ul>
 </div>
